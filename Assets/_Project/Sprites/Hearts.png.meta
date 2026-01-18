@@ -150,12 +150,12 @@ TextureImporter:
       name: Hearts_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 13
-        height: 12
+        x: 2
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: Hearts_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 2
-        width: 13
-        height: 12
+        x: 18
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: Hearts_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
-        width: 13
-        height: 12
+        x: 34
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Hearts_3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 2
-        width: 13
-        height: 12
+        x: 50
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: Hearts_4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 2
-        width: 13
-        height: 12
+        x: 66
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: Hearts_5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 2
-        width: 13
-        height: 12
+        x: 82
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,12 +282,12 @@ TextureImporter:
       name: Hearts_6
       rect:
         serializedVersion: 2
-        x: 97
-        y: 2
-        width: 13
-        height: 12
+        x: 98
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: Hearts_7
       rect:
         serializedVersion: 2
-        x: 114
-        y: 2
-        width: 13
-        height: 12
+        x: 115
+        y: 3
+        width: 11
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 65b81c284c2149c47b96e10988bd5c91
     internalID: 0
     vertices: []
     indices: 
