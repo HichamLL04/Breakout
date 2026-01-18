@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI
+    uniqueID: 2202219215
+    locked: 0
   - name: Pala
     uniqueID: 2710129175
     locked: 0
