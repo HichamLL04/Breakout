@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+        Debug.Log("Move");
         moveInput = value.Get<Vector2>();
         Vector2 playerVelocity = new Vector2(moveInput.x * speed, 0f);
         myRb.linearVelocity = playerVelocity;

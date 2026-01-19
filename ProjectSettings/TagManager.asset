@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Grey
+  - Green
+  - Yellow
+  - Orange
+  - Red
+  - Purple
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - UI
   - Ball
   - Player
-  - 
+  - Brick
   - 
   - 
   - 
@@ -43,6 +49,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2202219215
+    locked: 0
+  - name: Brick
+    uniqueID: 3809676019
     locked: 0
   - name: Pala
     uniqueID: 2710129175
