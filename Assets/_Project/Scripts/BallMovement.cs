@@ -25,11 +25,15 @@ public class BallMovement : MonoBehaviour
         {
             float nuevaX = pala.transform.position.x + offsetX;
             myRb.position = new Vector2(nuevaX, nuevaY);
+            myRb.linearVelocity = Vector2.zero;
+            myRb.angularVelocity = 0f;
         }
     }
 
     void FixedUpdate()
     {
+        if (!hasStarted) return;
+        
         myRb.linearVelocity = myRb.linearVelocity.normalized * velocidadConstante;
         
         float absX = Mathf.Abs(myRb.linearVelocity.x);
@@ -67,5 +71,10 @@ public class BallMovement : MonoBehaviour
             float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
             myRb.linearVelocity = new Vector2(direccionX * 3f, Mathf.Abs(myRb.linearVelocity.y));
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        hasStarted = false;
     }
 }
