@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2671459029869049868}
   - component: {fileID: 7231145383318272389}
   - component: {fileID: 7953596075119329305}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: GreyBrick
   m_TagString: Grey
   m_Icon: {fileID: 0}
