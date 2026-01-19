@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4416912, guid: c3426ea8dc83bac42abd236535cd825a, type: 3}
+    - target: {fileID: 5713785885011999948, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ca1b8d0bfeaa5e246b1573483d6305f8, type: 2}
     - target: {fileID: 5730801991928048478, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_Name
-      value: GreyBrick(Grey) (16) Variant
+      value: YellowBrick
       objectReference: {fileID: 0}
     - target: {fileID: 5730801991928048478, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_TagString
@@ -62,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7046696113374017705, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9007.756
+      value: -9007.755
       objectReference: {fileID: 0}
     - target: {fileID: 7046696113374017705, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82,11 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7046696113374017705, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -182.94556
       objectReference: {fileID: 0}
     - target: {fileID: 7046696113374017705, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 29.88268
       objectReference: {fileID: 0}
     - target: {fileID: 7046696113374017705, guid: 5d0317e1cb9783f46b00fbc6bf8c73be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

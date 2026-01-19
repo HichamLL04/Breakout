@@ -1,20 +1,20 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class BallMovement : MonoBehaviour
 {
     [SerializeField] GameObject pala;
     [SerializeField] float offsetY = 0.5f;
-    [SerializeField] float fuerzaTiro = 2f;
-    float nuevaY;
+    [SerializeField] float fuerzaTiro = 5f;
+    [SerializeField] float velocidadConstante = 5f;
+    
     bool hasStarted = false;
     Rigidbody2D myRb;
     float offsetX;
+    float nuevaY;
 
     void Start()
     {
         myRb = GetComponent<Rigidbody2D>();
-        
         offsetX = transform.position.x - pala.transform.position.x;
         nuevaY = pala.transform.position.y + offsetY;
     }
@@ -28,28 +28,44 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        myRb.linearVelocity = myRb.linearVelocity.normalized * velocidadConstante;
+        
+        float absX = Mathf.Abs(myRb.linearVelocity.x);
+        float absY = Mathf.Abs(myRb.linearVelocity.y);
+        
+        if (absY < 1f)
+        {
+            float signoY = myRb.linearVelocity.y >= 0 ? 1f : -1f;
+            myRb.linearVelocity = new Vector2(myRb.linearVelocity.x, 1f * signoY);
+            myRb.linearVelocity = myRb.linearVelocity.normalized * velocidadConstante;
+        }
+        
+        if (absX < 1f) 
+        {
+            float signoX = myRb.linearVelocity.x >= 0 ? 1f : -1f;
+            myRb.linearVelocity = new Vector2(1f * signoX, myRb.linearVelocity.y);
+            myRb.linearVelocity = myRb.linearVelocity.normalized * velocidadConstante;
+        }
+    }
+
     void OnTrow()
     {
         if (!hasStarted)
         {
             hasStarted = true;
-            myRb.linearVelocity = new Vector2(RandomY(), fuerzaTiro);
-            Debug.Log("Bola lanzada");
+            float randomX = Random.Range(-1f, 1f);
+            myRb.linearVelocity = new Vector2(randomX, fuerzaTiro);
         }
-    }
-
-    float RandomY()
-    {
-        float giro = Random.Range(0.1f, 1f);
-        return giro;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Lo dejo asi de momento. La intencion es que cada vez que golpe al jugador
-            // este agregue fuerza a y para evitar que sea tan recto como pasaba en el pong.
+            float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
+            myRb.linearVelocity = new Vector2(direccionX * 3f, Mathf.Abs(myRb.linearVelocity.y));
         }
     }
 }

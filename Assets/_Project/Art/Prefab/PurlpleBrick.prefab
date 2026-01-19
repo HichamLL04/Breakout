@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1392579073714863892, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b8673ece78a850649a9fee5ff8cdf895, type: 2}
     - target: {fileID: 1734880134899849025, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
       propertyPath: m_Name
-      value: GreyBrick(Grey) (16) Variant
+      value: PurlpleBrick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734880134899849025, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
+      propertyPath: m_TagString
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 3917721015259890870, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
       propertyPath: m_Pivot.x
@@ -74,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3917721015259890870, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 249
+      value: -182.94556
       objectReference: {fileID: 0}
     - target: {fileID: 3917721015259890870, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 135
+      value: 29.88268
       objectReference: {fileID: 0}
     - target: {fileID: 3917721015259890870, guid: 05928840a3ef33643b8d8437e879b436, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1625596781936493541, guid: b479e5f984b81664f93bfc06e827a005, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 106a5a4fd61366745bbaa4110ad1e4c6, type: 2}
     - target: {fileID: 2148112196694649776, guid: b479e5f984b81664f93bfc06e827a005, type: 3}
       propertyPath: m_Name
-      value: GreyBrick(Grey) (16) Variant
+      value: RedBrick
       objectReference: {fileID: 0}
     - target: {fileID: 2148112196694649776, guid: b479e5f984b81664f93bfc06e827a005, type: 3}
       propertyPath: m_TagString
@@ -78,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3711707587895064647, guid: b479e5f984b81664f93bfc06e827a005, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 249
+      value: -182.94556
       objectReference: {fileID: 0}
     - target: {fileID: 3711707587895064647, guid: b479e5f984b81664f93bfc06e827a005, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 135
+      value: 29.88268
       objectReference: {fileID: 0}
     - target: {fileID: 3711707587895064647, guid: b479e5f984b81664f93bfc06e827a005, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

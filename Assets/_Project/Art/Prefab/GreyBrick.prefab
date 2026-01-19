@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2671459029869049868}
   - component: {fileID: 7231145383318272389}
   - component: {fileID: 7953596075119329305}
+  - component: {fileID: 1939104561178647297}
   m_Layer: 8
   m_Name: GreyBrick
   m_TagString: Grey
@@ -155,3 +156,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83646230e5cb25246b357c6d4aded5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrickActivity
+--- !u!95 &1939104561178647297
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382208494543517484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1aa542b496517e4ab60b5d5fe0698fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
