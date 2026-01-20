@@ -10,19 +10,27 @@ public class HeartBehaviour : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     public void RestLife()
     {
-        Animator animator = corazones[vidasActuales].GetComponent<Animator>();
-        vidasActuales--;
-        animator.enabled = enabled;
+        if (vidasActuales >= -1)
+        {
+            Animator animator = corazones[vidasActuales].GetComponent<Animator>();
+            vidasActuales--;
+            animator.enabled = enabled;
+        }
+        else
+        {
+            GameOver();
+        }
+
     }
 
     void GameOver()
