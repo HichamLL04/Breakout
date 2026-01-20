@@ -4,9 +4,6 @@ public class HeartBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject[] corazones;
     int vidasActuales = 2;
-    bool animando = false;
-    Animator animatorActual;
-    int indiceActual;
 
     void Start()
     {
