@@ -6,6 +6,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float offsetY = 0.5f;
     [SerializeField] float fuerzaTiro = 5f;
     [SerializeField] float velocidadConstante = 5f;
+    [SerializeField] HeartBehaviour heartBehaviour;
     
     bool hasStarted = false;
     Rigidbody2D myRb;
@@ -76,5 +77,6 @@ public class BallMovement : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         hasStarted = false;
+        heartBehaviour.RestLife();
     }
 }
