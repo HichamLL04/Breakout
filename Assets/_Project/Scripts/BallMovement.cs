@@ -60,18 +60,20 @@ public class BallMovement : MonoBehaviour
         if (!hasStarted)
         {
             hasStarted = true;
-            float randomX = Random.Range(-1f, 1f);
-            myRb.linearVelocity = new Vector2(randomX, fuerzaTiro);
+            //float randomX = Random.Range(-1f, 1f);
+            myRb.linearVelocity = new Vector2(0, fuerzaTiro);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        /*
         if (collision.gameObject.CompareTag("Player"))
         {
             float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
             myRb.linearVelocity = new Vector2(direccionX * 3f, Mathf.Abs(myRb.linearVelocity.y));
         }
+        */
     }
 
     void OnTriggerExit2D(Collider2D collision)
