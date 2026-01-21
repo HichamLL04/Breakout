@@ -20,8 +20,8 @@ public class BrickActivity : MonoBehaviour
     {
         animator.enabled = true;
         string tag = gameObject.tag;
-        scoreCounting.IncreaseScore(tag);
         float duracion = animator.GetCurrentAnimatorStateInfo(0).length;
         Destroy(gameObject, duracion);
+        scoreCounting.IncreaseScore(tag);
     }
 }
