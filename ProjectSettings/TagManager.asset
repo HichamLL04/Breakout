@@ -58,5 +58,8 @@ TagManager:
   - name: Pala
     uniqueID: 2710129175
     locked: 0
+  - name: Pared
+    uniqueID: 2724764381
+    locked: 0
   m_RenderingLayers:
   - Default

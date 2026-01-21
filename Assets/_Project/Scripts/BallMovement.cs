@@ -7,7 +7,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float fuerzaTiro = 5f;
     [SerializeField] float velocidadConstante = 5f;
     [SerializeField] HeartBehaviour heartBehaviour;
-    
+
     bool hasStarted = false;
     Rigidbody2D myRb;
     float offsetX;
@@ -34,20 +34,20 @@ public class BallMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (!hasStarted) return;
-        
+
         myRb.linearVelocity = myRb.linearVelocity.normalized * velocidadConstante;
-        
+
         float absX = Mathf.Abs(myRb.linearVelocity.x);
         float absY = Mathf.Abs(myRb.linearVelocity.y);
-        
+
         if (absY < 1f)
         {
             float signoY = myRb.linearVelocity.y >= 0 ? 1f : -1f;
             myRb.linearVelocity = new Vector2(myRb.linearVelocity.x, 1f * signoY);
             myRb.linearVelocity = myRb.linearVelocity.normalized * velocidadConstante;
         }
-        
-        if (absX < 1f) 
+
+        if (absX < 1f)
         {
             float signoX = myRb.linearVelocity.x >= 0 ? 1f : -1f;
             myRb.linearVelocity = new Vector2(1f * signoX, myRb.linearVelocity.y);
@@ -74,6 +74,14 @@ public class BallMovement : MonoBehaviour
             myRb.linearVelocity = new Vector2(direccionX * 3f, Mathf.Abs(myRb.linearVelocity.y));
         }
         */
+
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Brick"))
+        {
+            float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
+            myRb.linearVelocity = new Vector2(direccionX * 3f, -Mathf.Abs(myRb.linearVelocity.y));
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D collision)

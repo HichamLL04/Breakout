@@ -3,8 +3,10 @@ using UnityEngine;
 public class BrickActivity : MonoBehaviour
 {
     Animator animator;
+    ScoreCounting scoreCounting;
     void Start()
     {
+        scoreCounting = FindFirstObjectByType<ScoreCounting>();
         animator = GetComponent<Animator>();
         animator.enabled = false;
     }
@@ -17,6 +19,8 @@ public class BrickActivity : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         animator.enabled = true;
+        string tag = gameObject.tag;
+        scoreCounting.IncreaseScore(tag);
         float duracion = animator.GetCurrentAnimatorStateInfo(0).length;
         Destroy(gameObject, duracion);
     }
