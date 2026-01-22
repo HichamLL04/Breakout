@@ -22,6 +22,7 @@ public class BrickActivity : MonoBehaviour
         string tag = gameObject.tag;
         float duracion = animator.GetCurrentAnimatorStateInfo(0).length;
         Destroy(gameObject, duracion);
+        BrickRowManager.OnBrickDestroyed();
         scoreCounting.IncreaseScore(tag);
     }
 }

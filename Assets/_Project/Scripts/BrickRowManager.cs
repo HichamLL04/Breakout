@@ -3,60 +3,77 @@ using UnityEngine.UI;
 
 public class BrickRowManager : MonoBehaviour
 {
-    // Tiene que haber 11 blockes
     [SerializeField] GameObject[] bricks;
+
+    private static int totalBricks = 0;
+
     void Start()
     {
         InstanceBricks();
         Invoke("DisableLayoutGroup", 0.5f);
     }
 
-    void DisableLayoutGroup()
+    public void DisableLayoutGroup()
     {
         var layoutGroup = GetComponent<HorizontalLayoutGroup>();
         if (layoutGroup != null)
         {
             layoutGroup.enabled = false;
-            Debug.Log($"Layout deshabilitado en {gameObject.name}");
         }
     }
 
-    void InstanceBricks()
+    public void EnableLayoutGroup()
     {
-        for (int i = 0; i <= 10; i++)
+        var layoutGroup = GetComponent<HorizontalLayoutGroup>();
+        if (layoutGroup != null)
         {
-            Instantiate(bricks[RandomInt()], transform);
+            layoutGroup.enabled = true;
         }
     }
+
+    public void InstanceBricks()
+    {
+        for (int i = 0; i < 11; i++)
+        {
+            Instantiate(bricks[RandomInt()], transform);
+            totalBricks++; 
+        }
+    }
+
+    public static void OnBrickDestroyed()
+    {
+        totalBricks--;
+        Debug.Log($"Bloques restantes: {totalBricks}");
+
+        if (totalBricks <= 0)
+        {
+            RegenerateAll();
+        }
+    }
+
+    static void RegenerateAll()
+{
+    Debug.Log("Regenerando todos los bloques");
+    
+    BrickRowManager[] allRows = FindObjectsByType<BrickRowManager>(FindObjectsSortMode.None);
+    
+    foreach (var row in allRows)
+    {
+        row.EnableLayoutGroup();
+        row.InstanceBricks();
+        row.Invoke("DisableLayoutGroup", 0.5f);
+    }
+}
 
     int RandomInt()
     {
         int index = Random.Range(0, 100);
 
-        if (index <= 49)
-        {
-            return 0;
-        }
-        else if (index <= 74)
-        {
-            return 1;
-        }
-        else if (index <= 87)
-        {
-            return 2;
-        }
-        else if (index <= 94)
-        {
-            return 3;
-        }
-        else if (index <= 98)
-        {
-            return 4;
-        }
-        else if (index <= 99)
-        {
-            return 1;
-        }
-        return 0;
+        if (index <= 49) return 0;
+        else if (index <= 74) return 1;
+        else if (index <= 87) return 2;
+        else if (index <= 94) return 3;
+        else if (index <= 98) return 4;
+        else return 5;
     }
 }

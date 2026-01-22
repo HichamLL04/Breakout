@@ -73,7 +73,7 @@ public class BallMovement : MonoBehaviour
             float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
             myRb.linearVelocity = new Vector2(direccionX * 3f, Mathf.Abs(myRb.linearVelocity.y));
         }
-        */
+        
 
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Brick"))
@@ -81,6 +81,7 @@ public class BallMovement : MonoBehaviour
             float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
             myRb.linearVelocity = new Vector2(direccionX * 3f, -Mathf.Abs(myRb.linearVelocity.y));
         }
+        */
 
     }
 
