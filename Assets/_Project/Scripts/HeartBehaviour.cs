@@ -17,7 +17,7 @@ public class HeartBehaviour : MonoBehaviour
 
     public void RestLife()
     {
-        if (vidasActuales >= -1)
+        if (vidasActuales >= 1)
         {
             Animator animator = corazones[vidasActuales].GetComponent<Animator>();
             vidasActuales--;
