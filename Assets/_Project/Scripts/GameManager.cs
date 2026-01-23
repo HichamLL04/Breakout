@@ -1,6 +1,9 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -40,5 +43,10 @@ public class GameManager : MonoBehaviour
         }
         score.text = "SCORE: " + scoreCounting.GetScore().ToString();
         HScore.text = "HIGH SCORE: " + PlayerPrefs.GetInt("Score").ToString();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
