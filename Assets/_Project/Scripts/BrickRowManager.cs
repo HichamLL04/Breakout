@@ -43,8 +43,6 @@ public class BrickRowManager : MonoBehaviour
     public static void OnBrickDestroyed()
     {
         totalBricks--;
-        Debug.Log($"Bloques restantes: {totalBricks}");
-
         if (totalBricks <= 0)
         {
             RegenerateAll();
@@ -53,8 +51,6 @@ public class BrickRowManager : MonoBehaviour
 
     static void RegenerateAll()
 {
-    Debug.Log("Regenerando todos los bloques");
-    
     BrickRowManager[] allRows = FindObjectsByType<BrickRowManager>(FindObjectsSortMode.None);
     
     foreach (var row in allRows)
