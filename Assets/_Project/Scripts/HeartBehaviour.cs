@@ -3,11 +3,12 @@ using UnityEngine;
 public class HeartBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject[] corazones;
+    GameManager gameManager;
     int vidasActuales = 2;
 
     void Start()
     {
-
+        gameManager = GetComponent<GameManager>();
     }
 
     void Update()
@@ -32,6 +33,7 @@ public class HeartBehaviour : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Game Over!");
+        gameManager.SaveScore();
+        gameManager.CanvasSwitch();
     }
 }

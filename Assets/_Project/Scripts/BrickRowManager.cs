@@ -36,7 +36,7 @@ public class BrickRowManager : MonoBehaviour
         for (int i = 0; i < 11; i++)
         {
             Instantiate(bricks[RandomInt()], transform);
-            totalBricks++; 
+            totalBricks++;
         }
     }
 
@@ -50,16 +50,16 @@ public class BrickRowManager : MonoBehaviour
     }
 
     static void RegenerateAll()
-{
-    BrickRowManager[] allRows = FindObjectsByType<BrickRowManager>(FindObjectsSortMode.None);
-    
-    foreach (var row in allRows)
     {
-        row.EnableLayoutGroup();
-        row.InstanceBricks();
-        row.Invoke("DisableLayoutGroup", 0.5f);
+        BrickRowManager[] allRows = FindObjectsByType<BrickRowManager>(FindObjectsSortMode.None);
+
+        foreach (var row in allRows)
+        {
+            row.EnableLayoutGroup();
+            row.InstanceBricks();
+            row.Invoke("DisableLayoutGroup", 0.5f);
+        }
     }
-}
 
     int RandomInt()
     {

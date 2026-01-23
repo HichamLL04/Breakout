@@ -12,6 +12,8 @@ TagManager:
   - Purple
   - Pared
   - ParedB
+  - Score
+  - HScore
   layers:
   - Default
   - TransparentFX

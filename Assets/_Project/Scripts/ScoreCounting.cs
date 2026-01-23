@@ -5,7 +5,7 @@ public class ScoreCounting : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
 
-    int score = 0;
+    public int score = 0;
 
     void Start()
     {
@@ -41,5 +41,10 @@ public class ScoreCounting : MonoBehaviour
     void UpdateScoreText()
     {
         textMeshProUGUI.text = score.ToString().PadLeft(7, '0');
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }
