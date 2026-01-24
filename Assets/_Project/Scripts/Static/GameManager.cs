@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOver;
     [SerializeField] TextMeshProUGUI score;
     [SerializeField] TextMeshProUGUI HScore;
+    [SerializeField] GameObject prefabSpeedUp;
+    [SerializeField] GameObject prefabDouble;
+    [SerializeField] Transform container;
+
     ScoreCounting scoreCounting;
     void Start()
     {
@@ -48,5 +52,19 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void GeneratePower(string tag, Vector3 position)
+    {
+        GameObject powerUp = null;
+
+        if (tag.Equals("Orange"))
+        {
+            powerUp = Instantiate(prefabSpeedUp, position, Quaternion.identity, container);
+        }
+        else if (tag.Equals("Red"))
+        {
+            powerUp = Instantiate(prefabDouble, position, Quaternion.identity, container);
+        }
     }
 }
