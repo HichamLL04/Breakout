@@ -14,11 +14,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject prefabSpeedUp;
     [SerializeField] GameObject prefabDouble;
     [SerializeField] Transform container;
+    [SerializeField] AudioClip backgroundSong;
 
+    AudioSource audioSource;
     ScoreCounting scoreCounting;
     void Start()
     {
         scoreCounting = GetComponent<ScoreCounting>();
+        audioSource = GetComponent<AudioSource>();
+        StartSong(backgroundSong);
     }
 
     void Update()
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveScore()
     {
+        //StopSong();
         if (!PlayerPrefs.HasKey("Score"))
         {
             PlayerPrefs.SetInt("Score", scoreCounting.GetScore());
@@ -56,15 +61,25 @@ public class GameManager : MonoBehaviour
 
     public void GeneratePower(string tag, Vector3 position)
     {
-        GameObject powerUp = null;
-
         if (tag.Equals("Orange"))
         {
-            powerUp = Instantiate(prefabSpeedUp, position, Quaternion.identity, container);
+            Instantiate(prefabSpeedUp, position, Quaternion.identity, container);
         }
         else if (tag.Equals("Red"))
         {
-            powerUp = Instantiate(prefabDouble, position, Quaternion.identity, container);
+            Instantiate(prefabDouble, position, Quaternion.identity, container);
         }
+    }
+
+    void StartSong(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
+
+    void StopSong()
+    {
+        audioSource.Stop();
     }
 }
