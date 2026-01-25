@@ -87,7 +87,10 @@ public class BallMovement : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        hasStarted = false;
-        heartBehaviour.RestLife();
+        if (collision.CompareTag("Line"))
+        {
+            hasStarted = false;
+            heartBehaviour.RestLife();
+        }
     }
 }
