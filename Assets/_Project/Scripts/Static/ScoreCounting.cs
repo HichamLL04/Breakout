@@ -5,7 +5,8 @@ public class ScoreCounting : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
 
-    public int score = 0;
+    int score = 0;
+    int multiplier = 1;
 
     void Start()
     {
@@ -17,22 +18,22 @@ public class ScoreCounting : MonoBehaviour
         switch (tag)
         {
             case "Grey":
-                score += 5;
+                score += 5*multiplier;
                 break;
             case "Green":
-                score += 10;
+                score += 10*multiplier;
                 break;
             case "Yellow":
-                score += 15;
+                score += 15*multiplier;
                 break;
             case "Orange":
-                score += 20;
+                score += 20*multiplier;
                 break;
             case "Red":
-                score += 25;
+                score += 25*multiplier;
                 break;
             case "Purple":
-                score += 30;
+                score += 30*multiplier;
                 break;
         }
         UpdateScoreText();
@@ -46,5 +47,15 @@ public class ScoreCounting : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+    
+    public int GetMultiplier()
+    {
+        return multiplier;
+    }
+
+    public void SetMultiplier(int newMultiplier)
+    {
+        multiplier = newMultiplier;
     }
 }

@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 175015986}
   m_Layer: 5
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -734,8 +734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -533}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -10, y: -550.18}
+  m_SizeDelta: {x: 0.72, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &175015986
 BoxCollider2D:
@@ -2184,8 +2184,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_AngularDamping: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -3223,6 +3223,7 @@ GameObject:
   - component: {fileID: 1376447676}
   - component: {fileID: 1376447677}
   - component: {fileID: 1376447678}
+  - component: {fileID: 1376447679}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3320,7 +3321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreCounting
   textMeshProUGUI: {fileID: 1365296413}
-  score: 0
 --- !u!114 &1376447678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3337,6 +3337,21 @@ MonoBehaviour:
   gameOver: {fileID: 1677447034}
   score: {fileID: 455163492}
   HScore: {fileID: 1960228927}
+  prefabSpeedUp: {fileID: 4372201434225375527, guid: 43f815b30a108f843a13240bd0af9fef, type: 3}
+  prefabDouble: {fileID: 301498148805670226, guid: f5e91fc58a084e94f94985094b492a5c, type: 3}
+  container: {fileID: 827208360}
+--- !u!114 &1376447679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376447672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d953cbadefb68b3449632c563a28e83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
 --- !u!1 &1403297303
 GameObject:
   m_ObjectHideFlags: 0

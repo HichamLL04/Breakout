@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SpeedUpPlayer
   m_EditorClassIdentifier: Assembly-CSharp::PowerUp
   powerUpType: speed
-  time: 10
+  time: 5
