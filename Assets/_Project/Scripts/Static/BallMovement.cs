@@ -16,6 +16,13 @@ public class BallMovement : MonoBehaviour
     void Start()
     {
         myRb = GetComponent<Rigidbody2D>();
+
+        if (pala == null)
+            pala = GameObject.FindGameObjectWithTag("Player");
+
+        if (heartBehaviour == null)
+            heartBehaviour = FindFirstObjectByType<HeartBehaviour>();
+
         offsetX = transform.position.x - pala.transform.position.x;
         nuevaY = pala.transform.position.y + offsetY;
     }
@@ -60,7 +67,6 @@ public class BallMovement : MonoBehaviour
         if (!hasStarted)
         {
             hasStarted = true;
-            //float randomX = Random.Range(-1f, 1f);
             myRb.linearVelocity = new Vector2(0, fuerzaTiro);
         }
     }
@@ -75,22 +81,31 @@ public class BallMovement : MonoBehaviour
         }
         
 
-
         if (collision.gameObject.layer == LayerMask.NameToLayer("Brick"))
         {
             float direccionX = Random.Range(0, 2) == 0 ? -1f : 1f;
             myRb.linearVelocity = new Vector2(direccionX * 3f, -Mathf.Abs(myRb.linearVelocity.y));
         }
         */
-
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Line"))
         {
-            hasStarted = false;
-            heartBehaviour.RestLife();
+            gameObject.SetActive(false);
+
+            BallMovement[] ballsRemaining = FindObjectsByType<BallMovement>(FindObjectsSortMode.None);
+
+            if (ballsRemaining.Length == 0)
+            {
+                if (heartBehaviour == null)
+                    heartBehaviour = FindFirstObjectByType<HeartBehaviour>();
+
+                heartBehaviour.RestLife();
+                FindFirstObjectByType<GameManager>().RespawnBall();
+            }
+            Destroy(gameObject);
         }
     }
 }

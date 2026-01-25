@@ -4,23 +4,25 @@ using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject game;
     [SerializeField] GameObject gameOver;
     [SerializeField] TextMeshProUGUI score;
     [SerializeField] TextMeshProUGUI HScore;
-    [SerializeField] GameObject prefabSpeedUp;
-    [SerializeField] GameObject prefabDouble;
+    [SerializeField] GameObject[] prefabPowerUp;
     [SerializeField] Transform container;
     [SerializeField] AudioClip backgroundSong;
+    [SerializeField] GameObject ballPrefab;
 
     AudioSource audioSource;
     ScoreCounting scoreCounting;
+    PlayerMovement playerMovement;
+
     void Start()
     {
         scoreCounting = GetComponent<ScoreCounting>();
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         audioSource = GetComponent<AudioSource>();
         StartSong(backgroundSong);
     }
@@ -63,11 +65,19 @@ public class GameManager : MonoBehaviour
     {
         if (tag.Equals("Orange"))
         {
-            Instantiate(prefabSpeedUp, position, Quaternion.identity, container);
+            Instantiate(prefabPowerUp[0], position, Quaternion.identity, container);
         }
         else if (tag.Equals("Red"))
         {
-            Instantiate(prefabDouble, position, Quaternion.identity, container);
+            Instantiate(prefabPowerUp[1], position, Quaternion.identity, container);
+        }
+        else if (tag.Equals("Yellow"))
+        {
+            Instantiate(prefabPowerUp[2], position, Quaternion.identity, container);
+        }
+        else if (tag.Equals("Purple"))
+        {
+            Instantiate(prefabPowerUp[3], position, Quaternion.identity, container);
         }
     }
 
@@ -81,5 +91,17 @@ public class GameManager : MonoBehaviour
     void StopSong()
     {
         audioSource.Stop();
+    }
+
+    public void RespawnBall()
+    {
+        GameObject pala = GameObject.FindGameObjectWithTag("Player");
+        Vector3 newPos = pala.transform.position + new Vector3(Random.Range(-1f, 1f), 2f, 0f);
+        Instantiate(ballPrefab, newPos, Quaternion.identity, container);
+    }
+
+    public Transform GetContainer()
+    {
+        return container;
     }
 }

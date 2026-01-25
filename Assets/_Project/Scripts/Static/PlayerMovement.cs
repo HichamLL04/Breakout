@@ -32,4 +32,14 @@ public class PlayerMovement : MonoBehaviour
   {
     speed = tempSpeed;
   }
+
+  public void SetTransform(Vector3 vector3)
+  {
+    transform.localScale = vector3;
+  }
+
+  public Vector3 GetTransform()
+  {
+    return transform.localScale;
+  }
 }
