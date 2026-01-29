@@ -2035,9 +2035,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!61 &659122297
@@ -4473,6 +4473,14 @@ PrefabInstance:
       propertyPath: heartBehaviour
       value: 
       objectReference: {fileID: 1376447676}
+    - target: {fileID: 6721321855295778515, guid: ac0eaaba004b8e748ba34023c71bd155, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    - target: {fileID: 6721321855295778515, guid: ac0eaaba004b8e748ba34023c71bd155, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Ball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
