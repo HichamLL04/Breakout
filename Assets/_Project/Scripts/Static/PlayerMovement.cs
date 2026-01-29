@@ -24,21 +24,20 @@ public class PlayerMovement : MonoBehaviour
     myRb.linearVelocity = playerVelocity;
   }
 
-  void Trow()
-  {
+  void OnTrow()
+{
     if (webGL)
     {
-      BallMovement[] balls = FindObjectsByType<BallMovement>(FindObjectsSortMode.None);
-
-      foreach (BallMovement ball in balls)
-      {
-        if (ball.gameObject.activeSelf)
+        BallMovement[] balls = FindObjectsByType<BallMovement>(FindObjectsSortMode.None);
+        foreach (BallMovement ball in balls)
         {
-          ball.Trow();
+            if (ball.gameObject.activeSelf)
+            {
+                ball.Trow();
+            }
         }
-      }
     }
-  }
+}
 
   public float GetSpeed()
   {

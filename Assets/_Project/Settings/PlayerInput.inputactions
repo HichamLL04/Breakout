@@ -153,7 +153,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Ball",
+                    "groups": "",
                     "action": "Trow",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -164,7 +164,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Ball",
+                    "groups": "",
                     "action": "Trow",
                     "isComposite": false,
                     "isPartOfComposite": false
