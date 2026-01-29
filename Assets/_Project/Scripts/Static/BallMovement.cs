@@ -71,6 +71,11 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    public void Trow()
+    {
+        OnTrow();
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         /*

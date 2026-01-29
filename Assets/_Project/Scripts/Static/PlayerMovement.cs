@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] float speed = 1;
   Rigidbody2D myRb;
   Vector2 moveInput;
+  bool webGL = false;
   void Start()
   {
     myRb = GetComponent<Rigidbody2D>();
@@ -21,6 +22,22 @@ public class PlayerMovement : MonoBehaviour
     moveInput = value.Get<Vector2>();
     Vector2 playerVelocity = new Vector2(moveInput.x * speed, 0f);
     myRb.linearVelocity = playerVelocity;
+  }
+
+  void Trow()
+  {
+    if (webGL)
+    {
+      BallMovement[] balls = FindObjectsByType<BallMovement>(FindObjectsSortMode.None);
+
+      foreach (BallMovement ball in balls)
+      {
+        if (ball.gameObject.activeSelf)
+        {
+          ball.Trow();
+        }
+      }
+    }
   }
 
   public float GetSpeed()

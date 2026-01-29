@@ -2035,7 +2035,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 1
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -4479,7 +4479,11 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     - target: {fileID: 6721321855295778515, guid: ac0eaaba004b8e748ba34023c71bd155, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Ball
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721321855295778515, guid: ac0eaaba004b8e748ba34023c71bd155, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
